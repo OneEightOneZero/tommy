@@ -14,7 +14,7 @@
       </mt-tab-item>
       <mt-tab-item id="shopcart">
         <img @click="changeHash" slot="icon" src="./assets/img/shopping-cart.png">
-        购物车
+        购物车<mt-badge size="small">{{num}}</mt-badge>
       </mt-tab-item>
       <mt-tab-item id="search">
         <img slot="icon" src="./assets/img/me.png">
@@ -25,10 +25,22 @@
 </template>
 
 <script>
+import Badge from './Badge.js';
+import GoodsDo from './GoodsDo.js';
 export default {
+  created(){
+    // 小球数量
+    this.num=GoodsDo.getTotaCount();
+    Badge.$on('addshopcart',(data)=>{
+      console.log(data)
+      console.log(this)
+      this.num+=5
+    })
+  },
   data() {
     return {
-      selected: ""
+      selected: "",
+      num:0,
     };
   },
   methods: {

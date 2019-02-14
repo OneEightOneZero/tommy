@@ -6,6 +6,7 @@
         <img :src="imgitem.banner">
       </mt-swipe-item>
     </mt-swipe>
+    <!-- 九宫格 -->
     <div>
       <div class="mint-grids">
           <router-link :to="btnitem.arouter"  v-for="(btnitem,index) in btns" :key="index">

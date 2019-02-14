@@ -32,15 +32,15 @@
         </div>
       </div>
       <mt-loadmore
-        auto-fill="false"
+        :auto-fill="false"
         :top-method="loadTop"
         :bottom-method="loadBottom"
         @top-status-change="handleTopChange"
         ref="loadmore"
       >
         <!-- goods -->
-        <div class="goodsbox" v-for="(goodsitem) in goodslist" :key="goodsitem.Sales_num">
-          <router-link :to="{name:'goods.detail',query:{id:goodsitem.Sales_num}}">
+        <div class="goodsbox" v-for="(goodsitem,index) in goodslist" :key="index">
+          <router-link :to="{name:'goods.detail',params:{id:index}}">
             <div class="goodscontent">
               <div class="goodsinfo">
                 <img :src="goodsitem.Pic" alt>

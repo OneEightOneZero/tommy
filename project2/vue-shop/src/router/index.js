@@ -8,6 +8,7 @@ import NewsList from '@/components/News/NewsList.vue';
 import NewsDetail from '@/components/News/NewsDetail.vue';
 import PhotoList from '@/components/Photo/PhotoList.vue';
 import GoodsList from '@/components/Goods/GoodsList.vue';
+import GoodsDetail from '@/components/Goods/GoodsDetail.vue';
 Vue.use(Router)
 
 export default new Router({
@@ -59,6 +60,12 @@ export default new Router({
       name: 'goods.list',
       path: '/goods/list/',
       component: GoodsList
+    },
+    // 商品详情
+    {
+      name: 'goods.detail',
+      path: '/goods/detail/:id',
+      component: GoodsDetail
     },
   ]
 })
